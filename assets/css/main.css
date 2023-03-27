@@ -902,12 +902,12 @@ body {
 
 .slick-prev {
   left: 5px;
-  background: url('/assets/img/Polygon2.png');
+  background: url('../img/Polygon2.png');
 }
 
 .slick-next {
   right: 5px;
-  background: url('/assets/img/Polygon3.png');
+  background: url('../img/Polygon3.png');
 }
 
 .about {
