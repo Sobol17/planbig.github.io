@@ -547,6 +547,10 @@ body {
   width: 23px;
 }
 
+.cta {
+  z-index: 10;
+}
+
 .header--cta {
   /*position: absolute;
    top: 50%;
@@ -693,7 +697,7 @@ body {
 
 .intro--banner {
   position: relative;
-  height: 475px;
+  height: 400px;
 }
 
 .intro--banner::before {
@@ -761,12 +765,6 @@ body {
   fill: #fff;
 }
 
-.intro--banner img {
-  position: absolute;
-  bottom: 21px;
-  right: -12px;
-}
-
 .intro--options {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -805,6 +803,16 @@ body {
   color: #fff;
 }
 
+.intro-video {
+  position: absolute;
+  bottom: 20px;
+  right: 0;
+}
+
+.intro-video-item {
+  width: 450px;
+}
+
 .work {
   position: relative;
   display: -webkit-box;
@@ -823,8 +831,8 @@ body {
   margin: 0 auto;
 }
 
-.work h2 {
-  margin: 0 0 20px 0;
+.work-title {
+  margin-bottom: 10px;
   font-size: 30px;
   text-align: center;
 }
@@ -837,10 +845,7 @@ body {
 
 .work-item {
   width: 22%;
-  margin-left: 10px;
-  margin-right: 10px;
   text-align: center;
-  margin-bottom: 10px;
   display: flex;
   justify-content: center;
   position: relative;
@@ -874,14 +879,16 @@ body {
 }
 
 .logo-slider {
-  margin-top: 12px;
   padding: 15px;
   border: 3px solid #be0671;
-  border-radius: 5px;
+  border-radius: 10px;
+  box-shadow: inset 0 0 10px 0 #be0671,0 0 10px 0 #be0671;
 }
 
 .logo-slider-title {
-  margin-top: 32px;
+  margin: 0 0 12px 0;
+  text-align: center;
+  font-size: 30px;
 }
 
 .logo-slider-item img {
@@ -902,12 +909,12 @@ body {
 
 .slick-prev {
   left: 5px;
-  background: url('../img/Polygon2.png');
+  background: url('/assets/img/Polygon2.png');
 }
 
 .slick-next {
   right: 5px;
-  background: url('../img/Polygon3.png');
+  background: url('/assets/img/Polygon3.png');
 }
 
 .about {
@@ -1090,15 +1097,17 @@ body {
   margin: 0 auto;
   }
 
+  .reviews-title {
+    font-size: 30px;
+    text-align: center;
+  }
+
   .reviews-container {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
 
-  .reviews-photo {
-    
-  }
 
   .reviews-photo img {
     max-width: 100%;
@@ -1118,7 +1127,21 @@ body {
     padding-left: 48px;
   }
 
-  .reviews-item {
+  .reviews-content-author {
+    font-weight: 800;
+    padding-bottom: 6px;
+    text-align: center;
+  }
+
+  .reviews-content-title {
+    font-weight: 600;
+    font-style: italic;
+    padding-bottom: 8px;
+    text-align: center;
+  }
+
+  .reviews-slider {
+    max-width: 400px;
   }
 
   .reviews-img {
@@ -1126,6 +1149,8 @@ body {
     height: 150px;
     border-radius: 50%;
     object-fit: cover;
+    margin: 0 auto;
+    padding-bottom: 12px;
   }
 
 
@@ -1400,7 +1425,7 @@ body {
   -webkit-transform: translateZ(0) translateX(0) rotateY(0deg);
           transform: translateZ(0) translateX(0) rotateY(0deg);
   min-height: 100%;
-  outline: 30px solid #0f33ff;
+  outline: 30px solid #be0671;
   -webkit-transition: -webkit-transform 0.4s;
   transition: -webkit-transform 0.4s;
   -o-transition: transform 0.4s;
@@ -1432,6 +1457,13 @@ body {
   -webkit-transform: translateZ(-1800px) translateX(-50%) rotateY(45deg);
           transform: translateZ(-1800px) translateX(-50%) rotateY(45deg);
   outline: 30px solid #be0671;
+}
+
+/* footer */
+
+.footer {
+  position: absolute;
+  bottom: 0;
 }
 
 .outer-nav {
@@ -1605,6 +1637,28 @@ body {
 }
 
 @media (max-width: 767px) {
+
+  .intro--banner h1 {
+    text-shadow: #000 0px 1px 2px;
+  }
+
+  .intro-video {
+    right: 50%;
+    transform: translate3d(50%, 0, 0);
+  }
+
+  .reviews-container {
+    display: block;
+  }
+
+  .reviews-desc {
+    padding-left: 0;
+  }
+
+  .reviews-item {
+    display: flex;
+    align-items: center;
+  }
 
   .logo-slider-title {
     display: none;

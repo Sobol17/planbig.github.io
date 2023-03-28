@@ -4,3 +4,8 @@ $('.logo-slider').slick({
   slidesToShow: 3,
   slidesToScroll: 1,
 });
+$('.reviews-slider').slick({
+  infinite: true,
+  slidesToShow: 1,
+  slidesToScroll: 1,
+});
