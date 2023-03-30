@@ -305,7 +305,7 @@ body {
 
 body {
   background-color: #0c0c0c;
-  background: url(../img/fon3.jpg) center no-repeat;
+  background: url(../img/fon3.jpg) no-repeat;
   background-size: cover;
   font-size: 14px;
   line-height: 1.6;
