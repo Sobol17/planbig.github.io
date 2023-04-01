@@ -28,3 +28,47 @@ $(document).ready(function(){
   });
   Fancybox.bind("[data-fancybox]", {});
 });
+
+// const ball = document.querySelectorAll('.drag-item');
+
+// ball.forEach( item => {
+//   item.onmousedown = function(e) {
+
+//     var coords = getCoords(item);
+//     var shiftX = e.pageX - coords.left;
+//     var shiftY = e.pageY - coords.top;
+  
+//     item.style.position = 'absolute';
+//     document.body.appendChild(item);
+//     moveAt(e);
+  
+//     item.style.zIndex = 1000; // над другими элементами
+  
+//     function moveAt(e) {
+//       item.style.left = e.pageX - shiftX + 'px';
+//       item.style.top = e.pageY - shiftY + 'px';
+//     }
+  
+//     document.onmousemove = function(e) {
+//       moveAt(e);
+//     };
+  
+//     item.onmouseup = function() {
+//       document.onmousemove = null;
+//       item.onmouseup = null;
+//     };
+  
+//   }
+
+//   item.ondragstart = function() {
+//     return false;
+//   };
+
+//   function getCoords(elem) {   // кроме IE8-
+//     var box = elem.getBoundingClientRect();
+//     return {
+//       top: box.top + pageYOffset,
+//       left: box.left + pageXOffset
+//     };
+//   }
+// })

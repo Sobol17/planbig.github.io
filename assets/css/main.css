@@ -1600,8 +1600,27 @@ body {
   z-index: 10;
 }
 
-.footer a {
+.footer-links a {
   font-size: 14px;
+  margin-right: 12px;
+}
+
+.footer-links a:last-child {
+  margin-right: 0;
+}
+
+.footer-politics {
+  font-size: 11px;
+}
+
+.footer-politics a {
+  text-decoration: none;
+  color: #fff;
+}
+
+
+.footer-politics a:hover {
+  text-decoration: underline;
 }
 
 .footer-btn {
@@ -1748,6 +1767,24 @@ body {
   transition-delay: 0.16s;
 }
 
+.hire iframe {
+  margin: 0 auto; 
+}
+
+.hire iframe body {
+  background-color: transparent;
+}
+
+.drag-wrapper {
+  display: flex;
+  position: relative;
+}
+
+.drag-item-img {
+  height: 200px;
+  cursor: pointer;
+}
+
 @media (max-height: 700px) {
   .work-title {
     font-size: 24px;
@@ -1856,6 +1893,29 @@ body {
 
 @media (max-width: 767px) {
 
+  body {
+    background-size: auto ;
+  }
+
+  .footer-btn {
+    padding: 0px 10px;
+    line-height: 20px;
+    font-size: 14px;
+  }
+
+  .reviews-photo {
+    display: none;
+  }
+
+
+  .reviews-content-text {
+    line-height: 1.2;
+  }
+
+  .number {
+    margin-top: 0;
+  }
+
   .matomba_iframe>iframe {
     min-height: 560px !important;
   }
@@ -1889,11 +1949,11 @@ body {
   }
 
   .reviews-slider>.slick-next {
-    right: -20px;
+    right: -35px;
   }
 
   .reviews-slider>.slick-prev {
-    left: -20px;
+    left: -35px;
   }
 
   .intro--banner h1 {
@@ -1910,7 +1970,7 @@ body {
   }
 
   .reviews-desc {
-    padding-left: 0;
+    margin-left: 0;
   }
 
   .reviews-item {
@@ -1978,10 +2038,10 @@ body {
     display: block;
   }
 
-  .intro--options>a {
+  .intro--options > a {
     display: block;
     max-width: 100%;
-    margin: 0 0 30px 0;
+    margin: 0 0 5px 0;
   }
 
   .intro--options h3 {
