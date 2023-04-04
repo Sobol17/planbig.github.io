@@ -935,7 +935,7 @@ body {
   background-color: #be0671;
   border: 0;
   padding: 2px 8px;
-  font-weight: 600;
+  font-weight: 400;
   font-size: 14px;
   transition: all .3s ease;
   overflow: hidden;
@@ -1591,6 +1591,7 @@ body {
 /* footer */
 
 .footer {
+  display: none;
   background-color: #2d2d2d;
   position: absolute;
   bottom: 0;
@@ -1609,17 +1610,19 @@ body {
   margin-right: 0;
 }
 
-.footer-politics {
-  font-size: 11px;
+.politics {
+  font-size: 13px;
+  padding-top: 12px;
+  text-align: center;
 }
 
-.footer-politics a {
+.politics a {
   text-decoration: none;
   color: #fff;
 }
 
 
-.footer-politics a:hover {
+.politics a:hover {
   text-decoration: underline;
 }
 
@@ -1650,14 +1653,6 @@ body {
   background-color: #ffffff85;
   transform: translateX(-40px) skewX(-45deg);
   animation: move-light 1.5s infinite;
-}
-
-.politics {
-  margin: 0;
-  margin-top: -20px;
-  font-size: 12px;
-  padding: 0;
-  text-align: center;
 }
 
 .outer-nav {
@@ -1786,8 +1781,14 @@ body {
 }
 
 @media (max-height: 700px) {
+  /* logo-slider */
+  .logo-slider {
+    padding: 12px;
+  }
+  /* works */
   .work-title {
     font-size: 24px;
+    margin-bottom: 4px;
   }
 
   .logo-slider-title {
@@ -1824,6 +1825,11 @@ body {
 
   .reviews-content-text {
     font-size: 13px;
+  }
+
+  .reviews-img {
+    width: 100px;
+    height: 100px;
   }
 
 }
