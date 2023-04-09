@@ -1265,6 +1265,7 @@ body {
   font-weight: 600;
   font-style: italic;
   padding-bottom: 8px;
+  padding-top: 12px;
   text-align: center;
 }
 
@@ -1439,7 +1440,8 @@ body {
   width: 100%;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
-  justify-content: space-between;
+  justify-content: center;
+  column-gap: 20px;
 }
 
 .work-request--options .options-b {
@@ -1450,7 +1452,8 @@ body {
   -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   -ms-flex-pack: distribute;
-  justify-content: space-around;
+  justify-content: center;
+  column-gap: 20px;
 }
 
 .work-request--options label {
@@ -1500,6 +1503,7 @@ body {
   -ms-flex-pack: justify;
   justify-content: space-between;
   margin-bottom: 25px;
+  margin-top: 25px;
 }
 
 .work-request--information .information-name,
@@ -1795,31 +1799,36 @@ body {
   /* works */
   .work-title {
     font-size: 24px;
-    margin-bottom: 4px;
+    margin-bottom: 8px;
     margin-top: 0;
   }
 
   .logo-slider-title {
     font-size: 24px;
-    margin-bottom: 8px;
-    margin-top: 0px;
+    margin-bottom: -18px;
+    margin-top: 8px;
+  }
+
+  .logo-slider {
+    position: relative;
+    top: 16px;
   }
 
   .work-templates {
     max-width: 800px;
     margin: 0 auto;
-    gap: 6px;
+    gap: 10px;
   }
 
   .work-item {
     width: 250px;
-    height: 110px;
+    height: 120px;
   }
 
   .work-item-last {
     padding: 10px;
     max-width: 228px;
-    height: 90px;
+    height: 103px;
   }
 
   .work-item-link {
