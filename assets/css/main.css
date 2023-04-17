@@ -875,8 +875,16 @@ body {
   /* text-indent: 30px; */
 }
 
+.about-desc-line {
+  content: '';
+  margin: 0 auto;
+  background-color: #ff29ef;
+  width: 200px;
+  height: 2px;
+}
+
 .about-desc p {
-  margin: 10px 0px;
+  margin: 8px 0px;
 }
 
 .about-desc p:nth-child(3) {
@@ -1876,6 +1884,14 @@ body {
 
   .about-laptop {
     margin-top: 16px;
+  }
+
+  .about-title {
+    margin-top: 0px;
+  }
+
+  .about-btn {
+    margin: 8px 0px;
   }
 
   .about-desc {
