@@ -305,7 +305,7 @@ body {
 
 body {
   background-color: #0c0c0c;
-  background: rgba(12, 12, 12) no-repeat;
+  background: url(../img/17.png) no-repeat;
   background-size: cover;
   font-size: 14px;
   line-height: 1.6;
