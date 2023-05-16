@@ -28,3 +28,44 @@ $(document).ready(function(){
   });
   Fancybox.bind("[data-fancybox]", {});
 });
+
+// steps
+$(".step__b-item").click(function (e) {
+  e.preventDefault();
+  var _this = $(this),
+  parent = _this.closest('.step'),
+  countAc = _this.siblings('.step__b-item.active').length;
+  if(countAc <= 1 ){
+    _this.toggleClass('active');
+    parent.find('.step__error').removeClass('active');
+  }
+  else{
+    parent.find('.step__error').addClass('active');
+  }
+});
+$(".step__btn").click(function (e) {
+  e.preventDefault();
+  var _this = $(this),
+  parent = _this.closest('.step'),
+  itemActive = parent.find(".step__b-item.active");
+  function textVal(a){
+    var res = "";
+    $(a).find(".step__b-item.active").each(function () {
+      return res += $(this).text() + "; ";
+    });
+    console.log(res);
+    return res;
+  }
+  if(!itemActive.length) {
+    _this.siblings('.step__error').addClass('active');
+  } else{
+    parent.removeClass('active');
+    $('.'+_this.data("step")).addClass('active');
+    if(parent.hasClass("step4")){
+      $("input[name='step1']").val(textVal(".step1"));
+      $("input[name='step2']").val(textVal(".step2"));
+      $("input[name='step3']").val(textVal(".step3"));
+      $("input[name='step4']").val(textVal(".step4"));
+    }
+  }
+});
