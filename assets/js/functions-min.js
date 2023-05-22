@@ -29,6 +29,223 @@ $(document).ready(function(){
   Fancybox.bind("[data-fancybox]", {});
 });
 
+function myFunction() {
+  var copyText = document.getElementById("myInput");
+  copyText.select();
+  document.execCommand("copy");
+  
+  var tooltip = document.getElementById("myTooltip");
+  tooltip.innerHTML = "Скопировано";
+}
+
+function outFunc() {
+  var tooltip = document.getElementById("myTooltip");
+  tooltip.innerHTML = "Копировать E-mail";
+}
+
+// send via ajax
+
+//focus fields animation placeholder
+$(".form__placeholder").click(function () {
+  $(this).addClass('fixtop').next().focus().removeClass('notvalid bounce').attr('style', '');
+});
+$("input, textarea").on('click focus', function () {
+  $(this).prev().addClass('fixtop');
+});
+$("input, textarea").each(function () {//on ready document
+  var $el = $(this);
+  setTimeout(function () {
+    if ($el.val() !== "") {
+      $el.prev().addClass('fixtop');
+    }
+  }, 300);
+});
+$("input, textarea").blur(function () {
+  var $el = $(this);
+  setTimeout(function () {
+    if ($el.val() === "") {
+      $el.prev().removeClass('fixtop');
+    }
+  }, 300);
+});
+
+//regular expressions pattern
+var rv_email = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.([a-z]{1,6}\.)?[a-z]{2,6}$/i;
+var rv_tel = /\+7\([0-9]{3}\)\-[0-9]{3}\-[0-9]{2}\-[0-9]{2}$/;
+var rv_name = /^[А-Яа-яЁёa-zA-Z*\s]{3,}$/i;
+
+//checking form fields after losing focus
+$("input[name='name']").blur(function () {//name
+  var _this = $(this);
+  if (_this.val().search(rv_name) === 0) {
+    _this.addClass('valid').removeClass('notvalid bounce');
+  }
+  else {
+    _this.addClass('notvalid').removeClass('valid');
+  }
+});
+
+$("input[name='email']").blur(function () {//email
+  var _this = $(this);
+  if (_this.val().search(rv_email) === 0) {
+    _this.addClass('valid').removeClass('notvalid bounce');
+  }
+  else {
+    _this.addClass('notvalid').removeClass('valid');
+  }
+});
+
+$("input[name='tel']").blur(function () {//tel
+  var _this = $(this);
+  if (_this.val().search(rv_tel) === 0) {
+    _this.addClass('valid').removeClass('notvalid bounce');
+  }
+  else {
+    _this.addClass('notvalid').removeClass('valid');
+  }
+});
+
+//reset style validation on click field
+$("input[type='tel'], input[type='email'], input[type='text'], textarea").click(function () {
+  $(this).removeClass('notvalid bounce').attr('style', '');
+});
+
+//function error falidation filds on submit form
+var $error = false;
+
+function funErrorValidation($par1) {
+  $par1.removeClass('bounce');
+  setTimeout(function () {
+    $par1.css('border-color', 'red').addClass('notvalid bounce');
+  }, 10);
+  $error = true;
+}
+
+$("form").submit(function () {
+  var $form = $(this);
+  $form.find("input, textarea").each(function () {
+    var ith = $(this);
+    if (ith.is('[name="name"]')) {
+      if (ith.val().search(rv_name) !== 0) {
+        funErrorValidation(ith);
+      }
+    }
+    if (ith.is('[type="email"]')) {
+      if (ith.val().search(rv_email) !== 0) {
+        funErrorValidation(ith);
+      }
+    }
+    if (ith.is('[name="tel"]')) {
+      if (ith.val().search(rv_tel) !== 0) {
+        funErrorValidation(ith);
+      }
+    }
+    if (ith.is('[name="textarea"]')) {
+      if (ith.val().length < 10) {
+        funErrorValidation(ith);
+      }
+    }
+  });
+  if (!$error) {
+    var $data = $form.serialize() + '&location_url=' + window.location.href;
+
+    /*$data.push({
+      name: "location_url",
+      value: window.location
+    });*/
+    //var $form_data = new FormData($form.get(0));// подготавливаем все данные формы
+    $.ajax({
+      type: 'POST',
+      url: './mail/mail.php?123',
+      dataType: 'json',
+      data: $data,
+      //var location_url = window.location;
+      /*// parameters on enctype="multipart/form-data"
+      cache: false, // not cache
+      processData: false, // disable string conversion
+      contentType: false, // disable data formatting */
+      beforeSend: function () {
+        $form.find('button[type="submit"]').attr('disabled', 'disabled');
+      },
+      success: function () {
+        var $resData = $data['error'];
+        if ($resData) {
+          alert($resData);
+        }
+        else {
+          $form.get(0).reset();//reset form
+          $form.find('button[type="submit"]').removeAttr('disabled');
+          $form.find('input, textarea').each(function () {
+            $(this).removeClass('notvalid bounce valid').attr('style', '');
+          });
+          $form.find('.form__placeholder').each(function () {
+            $(this).removeClass('fixtop');
+          });
+          if($form.hasClass('js-form-step')){
+            $('.step5').removeClass('active');
+            $('.step6').addClass('active');
+            $('.steps__title').addClass('hidden');
+          }
+          $.fancybox.close();
+          setTimeout(function () {
+            window.open("./thx.html","_self");
+            //ppbl('.pp_alert');
+          }, 1000);
+          //setTimeout(function(){$.fancybox.close();},5000);
+        }
+      },
+      error: function (xhr, ajaxOptions, thrownError) {
+        alert(xhr.status);
+        alert(thrownError);
+      },
+      complete: function () {
+        $form.find('button[type="submit"]').prop('disabled', false);
+      }
+    });
+  }
+  return false; // turn off standard support of the form
+});
+
+//mask tel
+function setCursorPosition(pos, elem) {
+  elem.focus();
+  if (elem.setSelectionRange) {
+    elem.setSelectionRange(pos, pos);
+  }
+  else if (elem.createTextRange) {
+    var range = elem.createTextRange();
+    range.collapse(true);
+    range.moveEnd("character", pos);
+    range.moveStart("character", pos);
+    range.select();
+  }
+}
+
+function mask(event) {
+  var that = event.target;
+  var matrix = "+7(___)-___-__-__",
+    i = 0,
+    def = matrix.replace(/\D/g, ""),
+    val = that.value.replace(/\D/g, "");
+  if (def.length >= val.length) {
+    val = def;
+  }
+  that.value = matrix.replace(/./g, function (a) {
+    return /[_\d]/.test(a) && i < val.length ? val.charAt(i++) : i >= val.length ? "" : a;
+  });
+  if (event.type === "blur") {
+    if (that.value.length === 2) {
+      that.value = "";
+    }
+  } else {
+    setCursorPosition(that.value.length, that);
+  }
+}
+
+var telForm = $("input[type='tel']");
+telForm.bind("focus click blur input", mask);
+
+
 // steps
 $(".step__b-item").click(function (e) {
   e.preventDefault();
