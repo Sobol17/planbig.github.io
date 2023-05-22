@@ -33,7 +33,12 @@
             <p>Plan Big</p>
           </a>
           <a href="tel:+74951270134" class="tel">+7 (495) 127-01-34</a>
-          <a class="tel" href="mailto:welcome@plan-big.com">welcome@plan-big.com</a>
+          <a href="mailto:welcome@plan-big.com" class="tel">welcome@plan-big.com</a>
+          <input class="tel" type="text" value="welcome@plan-big.com" id="myInput" style="cursor: default;">
+          <div class="copy">
+            <button onclick="myFunction()" class="buttn-mail">E-mail</button>
+            <span class="tooltiptext" id="myTooltip">Скопировать E-mail</span>
+          </div>
           <div class="header-social">
             <a href="https://api.whatsapp.com/send?phone=79660132196&text=%D0%97%D0%B4%D1%80%D0%B0%D0%B2%D1%81%D1%82%D0%B2%D1%83%D0%B9%D1%82%D0%B5!%20%D0%9F%D0%BE%D1%81%D0%B5%D1%82%D0%B8%D0%BB(%D0%B0)%20%D0%92%D0%B0%D1%88%20%D1%81%D0%B0%D0%B9%D1%82%20plan-big.com.%20%D0%A5%D0%BE%D1%87%D1%83%20%D0%BF%D1%80%D0%BE%D0%BA%D0%BE%D0%BD%D1%81%D1%83%D0%BB%D1%8C%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D1%82%D1%8C%D1%81%D1%8F%20%D0%BF%D0%BE%20%D1%81%D0%BE%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D1%8E%20%D0%B2%D0%B8%D0%B4%D0%B5%D0%BE." target="_blank">
               <img class="header-icon" src="assets/img/whatsapp.webp" alt="whatsapp">
@@ -62,7 +67,7 @@
         </nav>
         <ul class="l-main-content main-content">
           <li class="l-section section section--is-active">
-            <div class="intro">
+            <div id="intro" class="intro">
               <div class="intro--banner">
                 <h1>Хотите<br>увеличить<br>продажи?</h1>
                 <button class="cta">Закажите рекламный ролик в Plan Big! 
@@ -100,7 +105,7 @@
             </div>
           </li>
           <li class="l-section section">
-            <div class="work">
+            <div id="work" class="work">
               <h2 class="work-title">Наши работы</h2>
               <div class="work-templates">
                 <div class="work-item">
@@ -154,13 +159,19 @@
                 <div class="work-item work-item-last">
                   <div class="work-item-title">ЗДЕСЬ МОЖЕТ БЫТЬ ВАШ ПРОЕКТ</div>
                   <button class="work-item-btn cta">просчитать ваш проект</button>
-                  <a class="work-item-link" href="mailto:welcome@plan-big.com">welcome@plan-big.com</a>
+                  <div class="mail">
+                    <a class="work-item-link" href="mailto:welcome@plan-big.com">welcome@plan-big.com</a>
+                    <button onclick="myFunction()" class="buttn-mail buttn-mail-land">E-mail</button>
+                  </div>
                   <a class="work-item-link" href="tel:+74951270134">+7 (495) 127-01-34</a>
                 </div>
                 <div class="work-item-mobile">
                   <div class="work-item-title">ЗДЕСЬ МОЖЕТ БЫТЬ ВАШ ПРОЕКТ</div>
                   <button class="work-item-btn">просчитать ваш проект</button>
-                  <a class="work-item-link" href="mailto:welcome@plan-big.com">welcome@plan-big.com</a>
+                  <div class="mail">
+                    <a class="work-item-link" href="mailto:welcome@plan-big.com">welcome@plan-big.com</a>
+                    <button onclick="myFunction()" class="buttn-mail buttn-mail-land">E-mail</button>
+                  </div>
                   <a class="work-item-link" href="tel:+74951270134">+7 (495) 127-01-34</a>
                 </div>
               </div>
@@ -197,7 +208,7 @@
             </div>
           </li>
           <li class="l-section section">
-            <div class="about">
+            <div id="quiz" class="about">
               <div class="quiz">
                 <!--popup-->
                   <!--sta-->
@@ -205,8 +216,7 @@
                     <div class="pp__bl">
                       <div class="pp__w">
                         <div class="steps">
-                          <div class="steps__title">Мы детально погружаемся в каждый проект клиента.<br>
-                            Пройдите тест за <span style="color: red;">1 минуту</span> и рассчитайте стоимость проекта.
+                          <div class="steps__title">Пройдите короткий опрос и получите расчет стоимости проекта 
                           </div>
                           <!--one-->
                           <div class="step step1 active">
@@ -215,66 +225,61 @@
                               <div class="step__b-item">Увеличение продаж</div>
                               <div class="step__b-item">Повышение конверсии</div>
                               <div class="step__b-item">Имидж и PR</div>
+                              <div class="step__b-item">Повышение доверия</div>
                               <div class="step__b-item">Презентация продукта/услуги</div>
                               <div class="step__b-item">Рекламная компания</div>
                             </div>
                             <div class="step__error">выберите не более 2 варинтов ответа</div>
                             <a href="#" class="step__btn btn-yellow" data-step="step2">Следующий шаг</a>
                           </div>
-                          <!--one-->
+                          <!--two-->
                           <div class="step step2">
-                            <div class="step__title">2. О чём вы хотите рассказать при помощи видео?</div>
+                            <div class="step__title">2. Вид рекламного ролика?</div>
                             <div class="step__b">
-                              <div class="step__b-item">О товаре</div>
-                              <div class="step__b-item">Об услуге</div>
-                              <div class="step__b-item">О компании</div>
-                              <div class="step__b-item">О бизнесе</div>
+                              <div class="step__b-item">Постановочная съемка</div>
+                              <div class="step__b-item">2D - анимация</div>
+                              <div class="step__b-item">3D - анимация</div>
+                              <div class="step__b-item">Нужна консультация</div>
                             </div>
                             <div class="step__error">выберите не более 2 варинтов ответа</div>
                             <a href="#" class="step__btn btn-yellow" data-step="step3">Следующий шаг</a>
                           </div>
-                          <!--two-->
+                          <!--three-->
                           <div class="step step3">
-                            <div class="step__title">3. Какая предположительная длительность ролика?</div>
+                            <div class="step__title">3. Хронометраж ролика?</div>
                             <div class="step__b">
-                              <div class="step__b-item">Менее 1 минуты</div>
-                              <div class="step__b-item">1-2 минуты</div>
-                              <div class="step__b-item">2-3 минуты</div>
-                              <div class="step__b-item">Более 3-х минут</div>
-                              <div class="step__b-item">Пока не знаю</div>
+                              <div class="step__b-item">До 30 секунд</div>
+                              <div class="step__b-item">До 1 минуты</div>
+                              <div class="step__b-item">Свыше 1 минуты</div>
                             </div>
                             <div class="step__error">выберите не более 2 варинтов ответа</div>
                             <a href="#" class="step__btn btn-yellow" data-step="step4">Следующий шаг</a>
                           </div>
-                          <!--three-->
+                          <!--four-->
                           <div class="step step4">
-                            <div class="step__title">4. Какой вид анимация Вам больше всего подходит?</div>
+                            <div class="step__title">4. Когда нужен готовый ролик?</div>
                             <div class="step__b">
-                              <div class="step__b-item">2D Анимация</div>
-                              <div class="step__b-item">3D Анимация</div>
-                              <div class="step__b-item">Презентационное видео/ Корпоративный фильм
-                              </div>
-                              <div class="step__b-item">Рекламный ролик</div>
-                              <div class="step__b-item">Не знаю. Мне нужно посоветовать, что лучше подойдет</div>
+                              <div class="step__b-item">Срочно. Через 2 недели</div>
+                              <div class="step__b-item">Через 4-6 недель</div>
+                              <div class="step__b-item">Более 6 недель</div>
                             </div>
                             <div class="step__error">выберите не более 2 варинтов ответа</div>
                             <a href="#" class="step__btn btn-yellow" data-step="step5">Следующий шаг</a>
                           </div>
-                          <!--four-->
+                          <!--five-->
                           <div class="step step5">
-                            <div class="step__title">5. Когда нужен готовый ролик?</div>
+                            <div class="step__title">5. Бюджет?</div>
                             <div class="step__b">
-                              <div class="step__b-item">Срочно. Через 2 недели</div>
-                              <div class="step__b-item">Через 3-4 недели</div>
-                              <div class="step__b-item">Через 5-7 недель</div>
-                              <div class="step__b-item">Через 2 месяца или более</div>
+                              <div class="step__b-item">До 250 тыс ₽</div>
+                              <div class="step__b-item">От 250 тыс ₽ до 1,5 млн ₽</div>
+                              <div class="step__b-item">Свыше 1,5 млн ₽</div>
                             </div>
                             <div class="step__error">выберите не более 2 варинтов ответа</div>
                             <a href="#" class="step__btn btn-yellow" data-step="step6">Следующий шаг</a>
                           </div>
 
                           <div class="step step6">
-                            <div class="step__title">6. Контактная информация</div>
+                            <div class="step__title">Контактная информация</div>
                             <form class="form form_pp js-form-step" method="post" action="">
                               <input type="hidden" name="form_name"
                                 value="Ответьте на несколько вопросов для обсуждения и расчёта стоимости Вашего видео">
@@ -285,19 +290,17 @@
 
                               <div class="form__group form__group_pp">
                                 <div class="form__pl">
-                                  <div class="form__placeholder">Ваше Имя</div>
-                                  <input name="name" type="text" class="form__input form__input_pp">
+                                  <input placeholder="Ваше Имя" name="name" type="text" class="form__input form__input_pp">
                                 </div>
                               </div>
 
                               <div class="form__group form__group_pp">
                                 <div class="form__pl">
-                                  <div class="form__placeholder">Ваш Телефон</div>
-                                  <input name="tel" type="tel" class="form__input form__input_pp">
+                                  <input placeholder="Ваш Телефон" name="tel" type="tel" class="form__input form__input_pp">
                                 </div>
                               </div>
 
-                              <div class="form__group form__group_pp">
+                              <!-- <div class="form__group form__group_pp">
                                 <label class="form__label">Адрес сайта Вашей компании (желательно)</label>
                                 <div class="form__pl">
                                   <input name="site" type="text" class="form__input form__input_pp">
@@ -309,13 +312,13 @@
                                 <div class="form__pl">
                                   <input name="link" type="text" class="form__input form__input_pp">
                                 </div>
-                              </div>
+                              </div> -->
                               <div class="g-recaptcha" data-sitekey="6Lf2x2cfAAAAAMvz6Pj_RyPB6bfy4A2-61w1seLI"
                                 style="display: flex;margin: 0 auto;"></div>
 
                               <div class="form__group form__group_pp-btn">
                                 <button type="submit" class="btn-yellow btn__pp-btn">Рассчитать стоимость</button>
-                                <p class="form__txt-pol">Нажимая кнопку «Рассчитать стоимость», вы подтверждаете свое согласие на <a href="/Compliance.pdf" target="_blank"><span style="text-decoration-skip-ink: none;text-decoration: underline;">обработку пользовательских данных</span></a></p>
+                                <p class="form__txt-pol">Нажимая кнопку «Рассчитать стоимость», вы подтверждаете свое согласие на <a href="/Compliance.pdf" target="_blank"><span style="text-decoration-skip-ink: none;text-decoration: underline; color: #fff;">обработку пользовательских данных</span></a></p>
                               </div>
                             </form>
                           </div>
@@ -341,7 +344,7 @@
             </div>
           </li>
           <li class="l-section section">
-            <div class="reviews">
+            <div id="reviews" class="reviews">
               <div class="reviews-container">
                 <div class="reviews-photo">
                   <img src="assets/img/IMG_5802.JPG" alt="">
@@ -504,7 +507,7 @@
             </div>
           </li>
           <li class="l-section section section-5">
-            <div class="hire">
+            <div id="form" class="hire">
               <h2>Какую бизнес-задачу необходимо решить?</h2>
               <!-- checkout formspree.io for easy form setup -->
               <form class="work-request">
@@ -608,6 +611,7 @@
                 <div class="about-social">
                   <img class="about-icon" src="assets/img/contacts-ic-3.webp" alt="">
                   <a href="mailto:welcome@plan-big.com">welcome@plan-big.com</a>
+                  <button onclick="myFunction()" class="buttn-mail buttn-mail-second">E-mail</button>
                   <img class="about-icon" src="assets/img/contacts-ic-2.webp" alt="">
                   <a type="tel" href="tel:+74951270134">+7 (495) 127-01-34</a>
                 </div>
@@ -654,7 +658,6 @@
 <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
 <script src="assets/js/vendor/jquery.spincrement.min.js"></script>
 <script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-2.2.4.min.js"><\/script>')</script>
-<script async src='//widjet.matomba.ru/quiz/7217527a02fb12d3b867f01d5c444344'></script>
 <script src="assets/js/functions-min.js"></script>
 </body>
 </html>
