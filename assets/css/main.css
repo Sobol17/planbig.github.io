@@ -336,6 +336,85 @@ body {
   -webkit-text-size-adjust: 100%;
 }
 
+#myInput {
+  opacity: 0;
+  position: absolute;
+  top: -40px;
+}
+
+.buttn-mail {
+  background-image: url(../img/copy.svg);
+  background-color: transparent;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: transparent;
+  position: relative;
+  border: none;
+  top: 0;
+  cursor: pointer;
+  filter: invert(.9);
+  animation: copy-blick 3s infinite;
+  height: 30px;
+  left: -60px;
+}
+
+.buttn-mail:hover {
+  opacity: .8;
+  transition: .5s;
+}
+
+.mail {
+  position: relative;
+}
+
+.buttn-mail-second {
+  left: 0;
+}
+
+.buttn-mail-land {
+  position: absolute;
+  right: -280px;
+}
+
+.copy {
+  position: relative;
+  display: flex;
+}
+
+.copy:hover .tooltiptext {
+  display: block;
+}
+
+.tooltiptext {
+  display: none;
+  width: 140px;
+  background-color: #d3d3d3;
+  color: #000;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  position: absolute;
+  z-index: 1;
+  bottom: -40px;
+  right: 10px;
+  margin-left: -65px;
+  transition: opacity 0.3s;
+  font-weight: 600;
+}
+
+.tooltiptext::after {
+  content: "";
+  position: absolute;
+  top: -30%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #d3d3d3 transparent transparent transparent;
+  transform: rotate(180deg);
+}
+
 .l-viewport {
   position: relative;
   width: 100%;
@@ -532,7 +611,7 @@ body {
 }
 
 .header--logo__img {
-  width: 28.2px;
+  width: 32px;
   height: 32px;
 }
 
@@ -632,9 +711,9 @@ body {
 
 .btn-yellow {
   display: inline-block;
-  background-color: #7ad6fb;
+  background-color: #be0671;
   border-radius: 6px;
-  color: #000000;
+  color: #fff;
   font-size: 12px;
   font-weight: 700;
   line-height: 19px;
@@ -645,16 +724,15 @@ body {
   padding: 6px 17px;
 }
 .btn-yellow:hover {
-  color: #1a1a1a;
-  background-color: #377b96;
+  background-color: #f50892;
 }
 
 /* опросник pp, steps */
 
 .steps__title {
-  color: #586381;
-  font-size: 22px;
-  font-weight: 700;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
   line-height: 1.2;
   margin-bottom: 20px;
   text-align: center;
@@ -672,28 +750,34 @@ body {
 }
 .step__title {
   color: #fff;
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 700;
   margin-bottom: 20px;
   text-align: center;
 }
 .step__b {
-  display: table;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
   margin: 0 auto;
 }
 .step__b-item {
+  flex: 0 1 40%;
   transition: all 400ms;
   -webkit-transition: all 400ms;
   -ms-transition: all 400ms;
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 400;
   position: relative;
-  padding: 10px 0 10px 40px;
+  padding: 20px 10px 20px 50px;
   cursor: pointer;
   display: table;
+  border: 1px solid #be0671;
+  border-radius: 5px;
 }
 .step__b-item:hover {
-  color: red;
+  color: #be0671;
 }
 .step__b-item:before {
   transition: all 400ms;
@@ -703,18 +787,17 @@ body {
   position: absolute;
   top: 50%;
   margin-top: -15px;
-  left: 0;
+  left: 10px;
   width: 30px;
   height: 30px;
-  border: 1px solid #7ad6fb;
+  border: 1px solid #be0671;
   border-radius: 2px;
   background: #fff;
 }
 .step__b-item:not(:last-child) {
-  margin-bottom: 20px;
 }
 .step__b-item.active:before {
-  background: #7ad6fb;
+  background: #be0671;
 }
 
 .step__btn {
@@ -2331,6 +2414,9 @@ body {
     display: none;
   }
 
+  .step__b-item {
+    flex: 1 1 40%;
+  }
 
   .reviews-content-text {
     line-height: 1.2;
