@@ -245,21 +245,26 @@ function mask(event) {
 var telForm = $("input[type='tel']");
 telForm.bind("focus click blur input", mask);
 
-
 // steps
 $(".step__b-item").click(function (e) {
   e.preventDefault();
   var _this = $(this),
   parent = _this.closest('.step'),
   countAc = _this.siblings('.step__b-item.active').length;
-  if(countAc <= 1 ){
+  if(parent.hasClass('step1') || parent.hasClass('step2')) {
     _this.toggleClass('active');
     parent.find('.step__error').removeClass('active');
-  }
-  else{
+  } else {
+    if(countAc < 1 ){
+      _this.toggleClass('active');
+      parent.find('.step__error').removeClass('active');
+    }
+    else{
     parent.find('.step__error').addClass('active');
+    }
   }
 });
+
 $(".step__btn").click(function (e) {
   e.preventDefault();
   var _this = $(this),
@@ -273,16 +278,23 @@ $(".step__btn").click(function (e) {
     console.log(res);
     return res;
   }
+  if(parent.hasClass('solo')) {
+    $(".steps__suptitle").text('Один вариант ответа');
+  }
   if(!itemActive.length) {
     _this.siblings('.step__error').addClass('active');
   } else{
     parent.removeClass('active');
     $('.'+_this.data("step")).addClass('active');
-    if(parent.hasClass("step4")){
+    if(parent.hasClass("step5")){
       $("input[name='step1']").val(textVal(".step1"));
       $("input[name='step2']").val(textVal(".step2"));
       $("input[name='step3']").val(textVal(".step3"));
       $("input[name='step4']").val(textVal(".step4"));
+      $("input[name='step5']").val(textVal(".step5"));
+
+      $(".steps__title").addClass('hide');
+      $(".steps__suptitle").addClass('hide');
     }
   }
 });
