@@ -356,7 +356,7 @@ body {
   filter: invert(.9);
   animation: copy-blick 3s infinite;
   height: 30px;
-  left: -90px;
+  /* left: -90px; */
 }
 
 .buttn-mail:hover {
@@ -375,7 +375,9 @@ body {
 
 .buttn-mail-land {
   position: absolute;
-  right: -265px;
+  right: 13px;
+  width: 20px;
+  height: 20px;
 }
 
 .copy {
@@ -398,7 +400,7 @@ body {
   position: absolute;
   z-index: 1;
   bottom: -40px;
-  right: 40px;
+  right: -45px;
   margin-left: -65px;
   transition: opacity 0.3s;
   font-weight: 600;
@@ -612,7 +614,7 @@ body {
 }
 
 .header--logo__img {
-  width: 32px;
+  width: 28px;
   height: 32px;
 }
 
@@ -742,6 +744,13 @@ body {
   display: none;
 }
 
+.steps__suptitle {
+  background-color: #cccccc7d;
+  width: 200px;
+  padding: 2px 7px;
+  border-radius: 5px;
+}
+
 .step {
   display: none;
   line-height: 1.2;
@@ -756,6 +765,11 @@ body {
   margin-bottom: 20px;
   text-align: left;
 }
+
+.form-title {
+  text-align: center;
+}
+
 .step__b {
   display: flex;
   flex-wrap: wrap;
@@ -845,6 +859,12 @@ body {
 .form_pp {
   text-align: center;
 }
+
+.form__txt-pol {
+  max-width: 300px;
+  margin: 15px auto 0px; 
+}
+
 .form__t {
   color: #fff;
   font-size: 25px;
@@ -862,7 +882,7 @@ body {
   padding-top: 17px;
 }
 .form__group_pp {
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 .form__group_pp-btn {
   margin-bottom: 0;
@@ -901,30 +921,29 @@ body {
   -webkit-transition: color, border-color 0.3s;
   text-align: left;
   box-shadow: none;
-  width: 100%;
   max-width: 301px;
-  background: #fff;
+  background: transparent;
   border: none;
-  border: 1px solid #fff;
-  border-radius: 0;
-  padding: 7px 15px;
-  color: #000;
+  border: 1px solid #be0671;
+  border-radius: 5px;
+  padding: 14px 30px;
+  color: #fff;
   font-size: 17px;
   font-weight: 400;
   line-height: 1;
   letter-spacing: 0.02em;
 }
 .form__input::-webkit-input-placeholder {
-  color: #000;
+  color: #fff;
 }
 .form__input::-moz-placeholder {
-  color: #000;
+  color: #fff;
 }
 .form__input:-moz-placeholder {
-  color: #000;
+  color: #fff;
 }
 .form__input:-ms-input-placeholder {
-  color: #000;
+  color: #fff;
 }
 .form__input.notvalid {
   color: #ee4968;
@@ -943,7 +962,7 @@ body {
   color: #ee4968;
 }
 .form__input:focus {
-  color: #000;
+  color: #fff;
 }
 .form__input:focus::-webkit-input-placeholder {
   color: transparent;
@@ -957,13 +976,10 @@ body {
 .form__input:focus:-ms-input-placeholder {
   color: transparent;
 }
-.form__input_pp {
-  border-color: #000;
-}
+
 .form button[type=submit].btn__pp-btn {
   margin: 0 auto;
   padding: 15px 30px;
-  margin-left: 30px;
   border: none;
 }
 
@@ -972,7 +988,7 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 100px;
+  width: 120px;
   height: 70%;
   max-height: 750px;
   -webkit-box-orient: vertical;
@@ -1368,7 +1384,7 @@ body {
 }
 
 .work-item-title {
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 600;
   padding-bottom: 6px;
 }
@@ -1381,7 +1397,7 @@ body {
   border: 0;
   padding: 2px 8px;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 18px;
   transition: all .3s ease;
   overflow: hidden;
   margin-bottom: 4px;
@@ -2110,6 +2126,10 @@ body {
   animation: move-light 1.5s infinite;
 }
 
+.hide {
+  display: none;
+}
+
 .outer-nav {
   position: absolute;
   top: 50%;
@@ -2298,7 +2318,7 @@ body {
   }
 
   .work-item-link {
-    font-size: 12px;
+    font-size: 14px;
   }
 
   /* reviews */
